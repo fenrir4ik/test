@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Students</title>
+
+      <meta charset="UTF-8"/>
+    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       
+      <!-- See configuration in WebMvConfig.java -->
+      <link th:href="@{/bootstrap/css/bootstrap.min.css}"
+                rel="stylesheet" media="screen"/>
+                 
+        
+      <script th:src="@{/jquery/jquery.min.js}"></script>  
+      <script th:src="@{/popper/popper.min.js}"></script>  
+      <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>   
+
+<style>
+th, td {
+    padding: 5px;
+}
+</style>
+ 
+</head>
+ 
+<body>
+    <!-- Include _menu.html -->
+    <th:block th:include="/_menu"></th:block>
+
+ <div class="container">
+     <h2>Plants</h2>
+
+     <table  class="table table-hover">
+         <tr>
+             <th>Название растения</th>
+             <th>Тип растения</th>
+             <th>Тип листьев</th>
+             <th>Комфортная температура</th>
+             <th>Возраст растения</th>
+             <th>Высота растения</th>
+             <th>Почва</th>
+             <th>Описание почвы</th>
+         </tr>
+         <tr th:each="plantInfo : ${allPlants}">
+             <td th:utext="${plantInfo.name}">..</td>
+             <td th:utext="${plantInfo.plant_type}">..</td>
+             <td th:utext="${plantInfo.leaf_type}">..</td>
+             <td th:utext="${plantInfo.temperature}">..</td>
+             <td th:utext="${plantInfo.age}">..</td>
+             <td th:utext="${plantInfo.height}">..</td>
+             <td th:utext="${plantInfo.ground_name}">..</td>
+             <td th:utext="${plantInfo.ground_description}">..</td>
+         </tr>
+     </table>
+    </div>
+</body>
+</html>

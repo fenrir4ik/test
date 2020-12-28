@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Add Student</title>
+            <meta charset="UTF-8"/>
+     
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       
+      <!-- See configuration in WebMvConfig.java -->
+      <link th:href="@{/bootstrap/css/bootstrap.min.css}"
+                rel="stylesheet" media="screen"/>
+                 
+        
+      <script th:src="@{/jquery/jquery.min.js}"></script>  
+      <script th:src="@{/popper/popper.min.js}"></script>  
+      <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>   
+          
+   </head>
+   
+   <body>      
+      <!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>
+	  <div class="container">
+		  <h2>Add Plant</h2>
+		  <form th:action="@{/addplant}" th:object="${addPlantForm}" method="POST">
+			<div class="form-group">
+			<label>Название растения</label>
+			<input type="text"	class="form-control"  placeholder="Введите название растения" th:field="*{name}" />
+			</div>
+			<div class="form-group">
+			<label>Тип растения</label>
+			<input type="text"	class="form-control"  placeholder="Введите тип растения" th:field="*{plant_type}" />
+			</div>
+			<div class="form-group">
+			<label>Тип листьев</label>
+			<input type="text"	class="form-control"  placeholder="Введите тип листьев" th:field="*{leaf_type}" />
+			</div>
+			<div class="form-group">
+			<label>Комфортная температура</label>
+			<input type="text"	class="form-control"  placeholder="Введите комфортную температура" th:field="*{temperature}" />
+			</div>
+			<div class="form-group">
+			<label>Возраст растения</label>
+			<input type="text"	class="form-control"  placeholder="Введите возраст растения" th:field="*{age}" />
+			</div>
+			<div class="form-group">
+			<label>Высота растения</label>
+			<input type="text"	class="form-control"  placeholder="Введите высоту растения" th:field="*{height}" />
+			</div>
+			<div class="form-group">
+			<label>Почва</label>
+			<input type="text"	class="form-control"  placeholder="Введите почву для растения" th:field="*{ground_name}" />
+			</div>
+			<div class="form-group">
+			<label>Описание почвы</label>
+			<input type="text"	class="form-control"  placeholder="Введите описание почвы" th:field="*{ground_description}" />
+			</div>
+			<td><input type="submit"  class="btn btn-success"  value="Add"/></td>
+		  </form>
+	  </div>
+   </body>
+</html>
